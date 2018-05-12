@@ -14,11 +14,10 @@ def create_project_hash
 
  projects = {}
 
-#iterate through the projects
+
 kickstarter.css("li.project.grid_4").each do |project|
-  #make each project title a key
+  
   title = project.css("h2.bbcard_name strong a").text
-  #convert project title to symbol because symbols make better hash keys than strings
   projects[title.to_sym] = {
 
   :image_link => project.css("div.project-thumbnail a img").attributes("src").value,
